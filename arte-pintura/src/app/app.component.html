@@ -1,0 +1,235 @@
+<script>
+	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div>
+	<button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title"
+		data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+</div>
+
+
+<section>
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+			Dropdown button
+		</button>
+		<ul class="dropdown-menu">
+			<li><a class="dropdown-item" href="#">Action</a></li>
+			<li><a class="dropdown-item" href="#">Another action</a></li>
+			<li><a class="dropdown-item" href="#">Something else here</a></li>
+		</ul>
+	</div>
+</section>
+
+
+
+<section>
+	<button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+	<mat-menu #animals="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+		<button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+	</mat-menu>
+
+	<mat-menu #vertebrates="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+		<button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+		<button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+		<button mat-menu-item>Birds</button>
+		<button mat-menu-item>Mammals</button>
+	</mat-menu>
+
+	<mat-menu #invertebrates="matMenu">
+		<button mat-menu-item>Insects</button>
+		<button mat-menu-item>Molluscs</button>
+		<button mat-menu-item>Crustaceans</button>
+		<button mat-menu-item>Corals</button>
+		<button mat-menu-item>Arachnids</button>
+		<button mat-menu-item>Velvet worms</button>
+		<button mat-menu-item>Horseshoe crabs</button>
+	</mat-menu>
+
+	<mat-menu #fish="matMenu">
+		<button mat-menu-item>Baikal oilfish</button>
+		<button mat-menu-item>Bala shark</button>
+		<button mat-menu-item>Ballan wrasse</button>
+		<button mat-menu-item>Bamboo shark</button>
+		<button mat-menu-item>Banded killifish</button>
+	</mat-menu>
+
+	<mat-menu #amphibians="matMenu">
+		<button mat-menu-item>Sonoran desert toad</button>
+		<button mat-menu-item>Western toad</button>
+		<button mat-menu-item>Arroyo toad</button>
+		<button mat-menu-item>Yosemite toad</button>
+	</mat-menu>
+
+	<mat-menu #reptiles="matMenu">
+		<button mat-menu-item>Banded Day Gecko</button>
+		<button mat-menu-item>Banded Gila Monster</button>
+		<button mat-menu-item>Black Tree Monitor</button>
+		<button mat-menu-item>Blue Spiny Lizard</button>
+		<button mat-menu-item disabled>Velociraptor</button>
+	</mat-menu>
+</section>
+
+
+
+
+
+<div ngbAccordion #accordion="ngbAccordion">
+	<div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
+		<div ngbAccordionHeader class="accordion-button custom-header justify-content-between">
+			<p class="m-0">First panel - {{ first.collapsed ? 'collapsed' : 'opened' }}</p>
+			<button ngbAccordionToggle class="btn btn-link p-0">Toggle first</button>
+		</div>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem="second">
+		<div ngbAccordionHeader class="accordion-button custom-header justify-content-between">
+			<p class="m-0">Second panel</p>
+			<div>
+				<button ngbAccordionToggle class="btn btn-sm btn-outline-primary ms-2">Toggle second</button>
+				<button type="button" class="btn btn-sm btn-outline-secondary ms-2"
+					(click)="third.disabled = !third.disabled">
+					{{ third.disabled ? 'En' : 'Dis' }}able third
+				</button>
+				<button type="button" class="btn btn-sm btn-outline-danger ms-2" (click)="accordion.collapseAll()">
+					Collapse all
+				</button>
+			</div>
+		</div>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem="third" #third="ngbAccordionItem" [class.disabled]="third.disabled">
+		<div ngbAccordionHeader class="accordion-button custom-header">
+			<button ngbAccordionToggle [disabled]="third.disabled"
+				class="p-0 btn btn-link container-fluid text-start ps-0">
+				Third panel
+			</button>
+			@if (third.disabled) {
+			<p class="text-muted m-0 small">[I'm&nbsp;disabled]</p>
+			}
+		</div>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+					wolf moon
+					officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf
+					moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim
+					keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+					excepteur
+					butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+					you probably
+					haven't heard of them accusamus labore sustainable VHS.
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<h1>hi</h1>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<label for="dateOfBirth">Date of birth</label>
+				<div class="input-group">
+					<input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+						#dp="ngbDatepicker" />
+					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()"
+						type="button"></button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr />
+
+<pre>{{ closeResult() }}</pre>
+<h2>material design for web</h2>
+
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<section>
+	<div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+	<div matBadge="1" matBadgeSize="small" class="demo-section">Text with small badge</div>
+	<div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+
+	<div class="demo-section">
+		Button with a badge on the left
+		<button mat-raised-button matBadge="9" matBadgePosition="before">
+			Action
+		</button>
+	</div>
+
+	<div class="demo-section">
+		Button toggles badge visibility
+		<button mat-raised-button matBadge="7" matBadgePosition="before" [matBadgeHidden]="hidden"
+			(click)="toggleBadgeVisibility()">
+			Hide
+		</button>
+	</div>
+
+	<div class="demo-section">
+		Icon with a badge
+		<mat-icon matBadge="casa">home</mat-icon>
+		<!-- Include text description of the icon's meaning for screen-readers -->
+		<span class="cdk-visually-hidden">
+			Example with a home icon with overlaid badge showing the number 15
+		</span>
+	</div>
+<!-- <script>
+	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script> -->
+</section>
+
+<router-outlet />
