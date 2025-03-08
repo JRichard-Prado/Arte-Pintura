@@ -4,7 +4,7 @@ import { PortadaComponent } from './componentes/portada/portada.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink, RouterLinkActive,PortadaComponent],
+  imports: [ PortadaComponent, RouterOutlet ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

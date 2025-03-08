@@ -1,21 +1,34 @@
-
-<body class="body">
-    <!-- <p>portada works!</p> -->
-    <section id="menuInicio">
-       <h1>LÉA THIEUX</h1>
-       <ul>
-          <a href=""><li>BIOGRAFÍA</li></a>
-          <a href=""><li>PROYECTOS</li></a>
-          <a href=""><li>BLOG</li></a>
-          <a href=""><li>CONTACTO</li></a>
-       </ul>
-    </section>
-    <section id="idiomasInicio">
-       <ul>
-          <a href=""><li>ESP</li></a>
-          <a href=""><li>FRA</li></a>
-          <a href=""><li>ENG</li></a>
-       </ul>
-    </section>
+<body class="body" *ngIf="showPortada">
+   <section id="menuInicio">
+      <h1>LÉA THIEUX</h1>
+      <ul>
+         <a >
+            <li>BIOGRAFÍA</li>
+         </a>
+         <a routerLink="/biografia">
+            <li>PROYECTOS</li>
+         </a>
+         <a >
+            <li>BLOG</li>
+         </a>
+         <a >
+            <li>CONTACTO</li>
+         </a>
+      </ul>
+   </section>
+   <section id="idiomasInicio">
+      <ul>
+         <a href="">
+            <li>ESP</li>
+         </a>
+         <a href="">
+            <li>FRA</li>
+         </a>
+         <a href="">
+            <li>ENG</li>
+         </a>
+      </ul>
+   </section>
 
 </body>
+<router-outlet/>
