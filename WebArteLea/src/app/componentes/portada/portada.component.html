@@ -1,17 +1,18 @@
-<body class="body" *ngIf="showPortada">
+<body class="body" *ngIf="showPortada or showBiografia or showProyectos or showBlog or showContacto">
+   <!-- showPortada or showBiografia or showProyectos or showBlog or showContacto -->
    <section id="menuInicio">
       <h1>LÉA THIEUX</h1>
       <ul>
-         <a >
+         <a routerLink="/biografia" >
             <li>BIOGRAFÍA</li>
          </a>
-         <a routerLink="/biografia">
+         <a routerLink="/proyectos">
             <li>PROYECTOS</li>
          </a>
-         <a >
+         <a routerLink="/blog" >
             <li>BLOG</li>
          </a>
-         <a >
+         <a routerLink="/contacto" >
             <li>CONTACTO</li>
          </a>
       </ul>

@@ -9,14 +9,22 @@ import { CommonModule } from '@angular/common';
 })
 export class PortadaComponent {
   showPortada = true;
+  showBiografia = false;
+  showContacto = false;
+  showProyectos = false;
+  showBlog = false;
   constructor(private router: Router) {
     // Suscribirse a los eventos del router
     this.router.events.subscribe(event => {
       // Verificar si el evento es de tipo NavigationEnd
       if (event instanceof NavigationEnd) {
-        // Actualizar la propiedad showPortada basado en la URL
-        this.showPortada = !event.url.includes('/biografia');
+      this.showPortada = !event.url.includes('/biografia') && !event.url.includes('/proyectos') && !event.url.includes('/blog') && !event.url.includes('/contacto');
+      this.showBiografia = event.url.includes('/biografia');
+      this.showProyectos = event.url.includes('/proyectos');
+      this.showBlog = event.url.includes('/blog');
+      this.showContacto = event.url.includes('/contacto');
       }
+      
     });
   }
 
