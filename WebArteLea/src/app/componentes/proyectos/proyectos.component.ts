@@ -4,10 +4,11 @@ import { Swiper } from 'swiper/bundle';
 
 // import styles bundle
 import 'swiper/css/bundle';
+import { MenuPrincipalComponent } from '../menu-principal/menu-principal.component';
 
 @Component({
   selector: 'app-proyectos',
-  imports: [],
+  imports: [MenuPrincipalComponent],
   templateUrl: './proyectos.component.html',
   styleUrl: './proyectos.component.css'
 })
@@ -16,7 +17,6 @@ export class ProyectosComponent implements OnInit {
   ngOnInit(): void {
     let swiper: Swiper;
     swiper = new Swiper('.swiper', {
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
       speed: 3500,
