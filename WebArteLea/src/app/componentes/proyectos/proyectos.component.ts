@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-// import Swiper JS
 import { Swiper } from 'swiper/bundle';
-
-// import styles bundle
 import 'swiper/css/bundle';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { MenuPrincipalComponent } from '../menu-principal/menu-principal.component';
+
 
 @Component({
   selector: 'app-proyectos',
-  imports: [],
+  imports: [CommonModule, RouterOutlet,MenuPrincipalComponent],
   templateUrl: './proyectos.component.html',
   styleUrl: './proyectos.component.css'
 })
 export class ProyectosComponent implements OnInit {
-
+  title = 'Titulo de Proyectos';
   ngOnInit(): void {
     let swiper: Swiper;
     swiper = new Swiper('.swiper', {
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
       speed: 3500,
-      
+
       // slidesPerView: 1,
       grabCursor: true,
       centeredSlides: true,
@@ -35,14 +35,14 @@ export class ProyectosComponent implements OnInit {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-        
+
       },
 
       // And if we need scrollbar
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
-        
+
       },
       effect: 'cube',
       cubeEffect: {
@@ -51,10 +51,10 @@ export class ProyectosComponent implements OnInit {
         shadowOffset: 30,
         shadowScale: 1,
       },
-      // autoplay: {
-      //   delay: 3000,
-      // },
+      autoplay: {
+        delay: 3000,
+      },
     });
   }
-  
+
 }
