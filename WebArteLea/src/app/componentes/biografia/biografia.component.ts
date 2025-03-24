@@ -4,7 +4,7 @@ import { MenuPrincipalComponent } from '../menu-principal/menu-principal.compone
 
 @Component({
   selector: 'app-biografia',
-  imports: [CommonModule, MenuPrincipalComponent],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './biografia.component.html',
   styleUrl: './biografia.component.css'
 })

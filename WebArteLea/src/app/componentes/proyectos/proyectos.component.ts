@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Swiper } from 'swiper/bundle';
 import 'swiper/css/bundle';
+<<<<<<< HEAD
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { MenuPrincipalComponent } from '../menu-principal/menu-principal.component';
@@ -9,6 +10,13 @@ import { MenuPrincipalComponent } from '../menu-principal/menu-principal.compone
 @Component({
   selector: 'app-proyectos',
   imports: [CommonModule, RouterOutlet,MenuPrincipalComponent],
+=======
+import { MenuPrincipalComponent } from '../menu-principal/menu-principal.component';
+
+@Component({
+  selector: 'app-proyectos',
+  imports: [MenuPrincipalComponent],
+>>>>>>> 3436c8243ce8fa9f43467549bd743f44d058d385
   templateUrl: './proyectos.component.html',
   styleUrl: './proyectos.component.css'
 })
